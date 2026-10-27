@@ -25,6 +25,6 @@ class AnimeSeries(models.Model):
     episodes = models.PositiveIntegerField()
     rating = models.FloatField(default=0.0)
     synopsis = models.TextField(blank=True, null=True)
-    cover_image = models.CharField(max_length=200, blank=True, null=True, default='')
+    cover_image = models.CharField(max_length=200, blank=True, default='')
     def __str__(self):
         return self.title
