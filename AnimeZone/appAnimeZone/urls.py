@@ -5,7 +5,7 @@ from . import views
 app_name = 'appAnimeZone'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.home, name='index'),
     path('series/', views.series_list, name='series_list'),
     path('series/<int:pk>/', views.series_detail, name='series_detail'),
     path('generos/', views.generos_list, name='generos_list'),
