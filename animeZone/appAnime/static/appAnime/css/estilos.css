@@ -136,6 +136,7 @@ nav {
     margin-top: 25px;
     background-color: green;
     color: black;
+    border-radius: 12px;
 }
 
 .imagen-detalle {
