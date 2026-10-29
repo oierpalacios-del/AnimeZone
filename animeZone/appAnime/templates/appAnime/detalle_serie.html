@@ -3,39 +3,47 @@
 {% block titulo %}{{ serie.title }} | Anime Zone{% endblock %}
 
 {% block contenido %}
-<article class="detalle">
-    <h1>{{ serie.title }}</h1>
-
+<section class="detalle">
     {% if serie.image_url %}
-    <img class="imagen-detalle"
-         src="{{ serie.image_url }}"
-         alt="Portada de {{ serie.title }}">
+        <img
+            src="{{ serie.image_url }}"
+            alt="Imagen de {{ serie.title }}"
+            class="imagen-detalle"
+        >
     {% endif %}
 
-    <p><strong>Año:</strong> {{ serie.release_year }}</p>
-    <p><strong>Valoración:</strong> {{ serie.rating }}/10</p>
+    <div>
+        <p class="etiqueta">DETALLES DEL ANIME</p>
+        <h1>{{ serie.title }}</h1>
 
-    <h2>Sinopsis</h2>
-    <p>{{ serie.synopsis }}</p>
+        <p><strong>Año:</strong> {{ serie.release_year }}</p>
+        <p><strong>Valoración:</strong> {{ serie.rating }}/10</p>
 
-    <h2>Género</h2>
-    <p>
-        <a href="{% url 'appAnime:detalle_genero' serie.genre.id %}">
-            {{ serie.genre.name }}
-        </a>
-    </p>
-
-    <h2>Estudios de animación</h2>
-    <ul>
-        {% for estudio in serie.studios.all %}
-        <li>
-            <a href="{% url 'appAnime:detalle_estudio' estudio.id %}">
-                {{ estudio.name }}
+        <p>
+            <strong>Género principal:</strong>
+            <a href="{% url 'appAnime:detalle_genero' serie.genre.id %}">
+                {{ serie.genre.name }}
             </a>
-        </li>
-        {% empty %}
-        <li>No hay estudios asociados.</li>
-        {% endfor %}
-    </ul>
-</article>
+        </p>
+
+        <h2>Sinopsis</h2>
+        <p>{{ serie.synopsis }}</p>
+
+        <h2>Estudios de animación</h2>
+
+        {% if serie.studios.all %}
+            <ul>
+                {% for estudio in serie.studios.all %}
+                    <li>
+                        <a href="{% url 'appAnime:detalle_estudio' estudio.id %}">
+                            {{ estudio.name }}
+                        </a>
+                    </li>
+                {% empty %}
+                    <li>No hay estudios asociados.</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}
