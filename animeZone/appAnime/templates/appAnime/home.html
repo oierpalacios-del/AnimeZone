@@ -4,8 +4,13 @@
 
 {% block contenido %}
 <section class="hero">
-    <h1>Bienvenido a Anime Zone</h1>
-    <p>Descubre series, géneros y estudios de animación.</p>
+    <p class="etiqueta">TU UNIVERSO ANIME</p>
+    <h1>Descubre tu próximo anime favorito</h1>
+    <p>Explora series, géneros y los estudios que les dan vida.</p>
+
+    <a class="boton" href="{% url 'appAnime:lista_series' %}">
+        Explorar series
+    </a>
 </section>
 
 <h2>El mejor anime de cada género</h2>
