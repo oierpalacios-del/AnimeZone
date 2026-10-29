@@ -1,0 +1,22 @@
+{% extends 'appAnime/base.html' %}
+
+{% block titulo %}Estudios | Anime Zone{% endblock %}
+
+{% block contenido %}
+<h1>Estudios de animación</h1>
+
+<div class="rejilla">
+    {% for estudio in estudios %}
+    <article class="tarjeta tarjeta-contenido">
+        <h2>{{ estudio.name }}</h2>
+        <p>{{ estudio.description|truncatewords:25 }}</p>
+
+        <a href="{% url 'appAnime:detalle_estudio' estudio.id %}">
+            Ver estudio
+        </a>
+    </article>
+    {% empty %}
+    <p>No hay estudios registrados.</p>
+    {% endfor %}
+</div>
+{% endblock %}

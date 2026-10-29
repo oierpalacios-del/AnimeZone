@@ -1,0 +1,41 @@
+{% extends 'appAnime/base.html' %}
+
+{% block titulo %}{{ serie.title }} | Anime Zone{% endblock %}
+
+{% block contenido %}
+<article class="detalle">
+    <h1>{{ serie.title }}</h1>
+
+    {% if serie.image_url %}
+    <img class="imagen-detalle"
+         src="{{ serie.image_url }}"
+         alt="Portada de {{ serie.title }}">
+    {% endif %}
+
+    <p><strong>Año:</strong> {{ serie.release_year }}</p>
+    <p><strong>Valoración:</strong> {{ serie.rating }}/10</p>
+
+    <h2>Sinopsis</h2>
+    <p>{{ serie.synopsis }}</p>
+
+    <h2>Género</h2>
+    <p>
+        <a href="{% url 'appAnime:detalle_genero' serie.genre.id %}">
+            {{ serie.genre.name }}
+        </a>
+    </p>
+
+    <h2>Estudios de animación</h2>
+    <ul>
+        {% for estudio in serie.studios.all %}
+        <li>
+            <a href="{% url 'appAnime:detalle_estudio' estudio.id %}">
+                {{ estudio.name }}
+            </a>
+        </li>
+        {% empty %}
+        <li>No hay estudios asociados.</li>
+        {% endfor %}
+    </ul>
+</article>
+{% endblock %}

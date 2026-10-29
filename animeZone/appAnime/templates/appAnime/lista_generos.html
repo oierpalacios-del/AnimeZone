@@ -1,0 +1,22 @@
+{% extends 'appAnime/base.html' %}
+
+{% block titulo %}Géneros | Anime Zone{% endblock %}
+
+{% block contenido %}
+<h1>Géneros de anime</h1>
+
+<div class="rejilla">
+    {% for genero in generos %}
+    <article class="tarjeta tarjeta-contenido">
+        <h2>{{ genero.name }}</h2>
+        <p>{{ genero.description|truncatewords:25 }}</p>
+
+        <a href="{% url 'appAnime:detalle_genero' genero.id %}">
+            Ver género
+        </a>
+    </article>
+    {% empty %}
+    <p>No hay géneros registrados.</p>
+    {% endfor %}
+</div>
+{% endblock %}

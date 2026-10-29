@@ -1,0 +1,37 @@
+{% extends 'appAnime/base.html' %}
+
+{% block titulo %}Inicio | Anime Zone{% endblock %}
+
+{% block contenido %}
+<section class="hero">
+    <h1>Bienvenido a Anime Zone</h1>
+    <p>Descubre series, géneros y estudios de animación.</p>
+</section>
+
+<h2>El mejor anime de cada género</h2>
+
+<div class="rejilla">
+    {% for serie in destacados %}
+    <article class="tarjeta">
+        {% if serie.image_url %}
+        <img class="imagen-anime"
+             src="{{ serie.image_url }}"
+             alt="Portada de {{ serie.title }}">
+        {% endif %}
+
+        <div class="tarjeta-contenido">
+            <p class="etiqueta">{{ serie.genre.name }}</p>
+            <h3>{{ serie.title }}</h3>
+            <p>Año: {{ serie.release_year }}</p>
+            <p>Valoración: {{ serie.rating }}/10</p>
+
+            <a href="{% url 'appAnime:detalle_serie' serie.id %}">
+                Ver detalles
+            </a>
+        </div>
+    </article>
+    {% empty %}
+    <p>Aún no hay series registradas.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'appAnime/base.html' %}
+
+{% block titulo %}Series | Anime Zone{% endblock %}
+
+{% block contenido %}
+<h1>Todas las series</h1>
+
+<div class="rejilla">
+    {% for serie in series %}
+    <article class="tarjeta">
+        {% if serie.image_url %}
+        <img class="imagen-anime"
+             src="{{ serie.image_url }}"
+             alt="Portada de {{ serie.title }}">
+        {% endif %}
+
+        <div class="tarjeta-contenido">
+            <h2>{{ serie.title }}</h2>
+            <p>Género: {{ serie.genre.name }}</p>
+            <p>Año: {{ serie.release_year }}</p>
+            <p>Valoración: {{ serie.rating }}/10</p>
+
+            <a href="{% url 'appAnime:detalle_serie' serie.id %}">
+                Ver detalles
+            </a>
+        </div>
+    </article>
+    {% empty %}
+    <p>No hay series registradas.</p>
+    {% endfor %}
+</div>
+{% endblock %}
