@@ -7,18 +7,21 @@
 
 body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
-    background-color: lightskyblue;
-    color:white;
+    background-color: #121212;
+    color: white;
 }
 
 a {
-    color: lightskyblue;
+    color: #ffcc00;
     text-decoration: none;
 }
 
 a:hover {
-    color: lightpink;
+    color: #ffe680;
 }
 
 /* Cabecera y navegación */
@@ -30,7 +33,7 @@ a:hover {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px 6%;
-    background-color: black;
+    background-color: #000000;
 }
 
 .logo {
@@ -42,7 +45,15 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    background-color: black;
+    background-color: #000000;
+}
+
+nav a {
+    color: #ffcc00;
+}
+
+nav a:hover {
+    color: white;
 }
 
 /* Contenido */
@@ -51,24 +62,29 @@ nav {
     width: 88%;
     max-width: 1200px;
     margin: 40px auto;
-    min-height: 65vh;
+    min-height: 0;
+    flex: 1;
 }
+
+/* Página de inicio */
 
 .hero {
     padding: 60px 30px;
     margin-bottom: 45px;
     border-radius: 18px;
-    background: linear-gradient(135deg, #29204b, #252b48);
+    background: linear-gradient(135deg, #b00000, #750000);
+    color: white;
 }
 
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.15;
     max-width: 750px;
+    color: white;
 }
 
 .etiqueta {
-    color: #c4b5fd;
+    color: #ffcc00;
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: bold;
@@ -81,18 +97,18 @@ nav {
     display: inline-block;
     padding: 12px 20px;
     margin-top: 15px;
-    background-color: blueviolet;
-    color: white;
+    background-color: #ffcc00;
+    color: black;
     border-radius: 8px;
     font-weight: bold;
 }
 
 .boton:hover {
-    background-color: blueviolet;
-    color: white;
+    background-color: #ffe066;
+    color: black;
 }
 
-/* Tarjetas */
+/* Tarjetas de series, géneros y estudios */
 
 .rejilla {
     display: grid;
@@ -103,57 +119,160 @@ nav {
 
 .tarjeta {
     overflow: hidden;
-    border: 1px solid black;
+    border: 1px solid #b00000;
     border-radius: 12px;
-    background-color: green;
+    background: linear-gradient(135deg, #b00000, #8b0000);
+    color: white;
 }
 
 .tarjeta-contenido {
     padding: 20px;
-    
 }
+
+.tarjeta h2,
+.tarjeta h3 {
+    margin-top: 0;
+    color: white;
+}
+
+.tarjeta p {
+    color: white;
+}
+
+.tarjeta a {
+    color: #ffcc00;
+}
+
+.tarjeta a:hover {
+    color: #ffe680;
+}
+
+/* Imágenes de los animes */
 
 .imagen-anime {
     display: block;
     width: 100%;
     height: 280px;
     object-fit: cover;
-    background-color: blue;
+    background-color: #1a1a1a;
 }
 
-.tarjeta h2,
-.tarjeta h3 {
-    margin-top: 0;
-}
-
-/* Página de detalles */
+/* Página de detalles de los animes */
 
 .detalle {
     display: grid;
-    grid-template-columns: minmax(200px, 320px) 1fr;
+    grid-template-columns: minmax(0, 1fr) 350px;
     gap: 35px;
-    align-items: start;
+    align-items: center;
     margin-top: 25px;
-    background-color: green;
-    color: black;
+    padding: 35px;
+    background: linear-gradient(135deg, #b00000, #750000);
+    color: white;
     border-radius: 12px;
+}
+
+.detalle-texto {
+    min-width: 0;
+}
+
+.detalle h1,
+.detalle h2,
+.detalle p,
+.detalle li {
+    color: white;
+}
+
+.detalle .etiqueta {
+    color: #ffcc00;
+}
+
+.detalle a {
+    color: #ffcc00;
+}
+
+.detalle a:hover {
+    color: #ffe680;
+}
+
+.detalle-imagen {
+    width: 100%;
 }
 
 .imagen-detalle {
     width: 100%;
+    max-height: 450px;
     border-radius: 12px;
     object-fit: cover;
 }
+
+/* Logos de los estudios */
+
+.logo-estudio {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background-color: white;
+    padding: 7px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.nombre-estudio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nombre-estudio h2,
+.nombre-estudio h3 {
+    margin: 0;
+}
+
+/* Listas y enlaces */
 
 .lista-enlaces li {
     margin-bottom: 12px;
 }
 
+.lista-enlaces a {
+    color: #ffcc00;
+}
+
 /* Pie de página */
 
 .pie {
-    padding: 0.34%;
+    padding: 25px 12px;
     text-align: center;
     color: lightgray;
-    background-color: black;
+    background-color: #000000;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 768px) {
+    .cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contenedor {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 35px 25px;
+    }
+
+    .detalle {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .imagen-detalle {
+        max-height: 400px;
+    }
+
+    .rejilla {
+        grid-template-columns: 1fr;
+    }
 }

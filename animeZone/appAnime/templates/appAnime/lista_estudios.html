@@ -1,4 +1,6 @@
+
 {% extends 'appAnime/base.html' %}
+{% load static %}
 
 {% block titulo %}Estudios | Anime Zone{% endblock %}
 
@@ -8,12 +10,40 @@
 <div class="rejilla">
     {% for estudio in estudios %}
     <article class="tarjeta tarjeta-contenido">
-        <h2>{{ estudio.name }}</h2>
+
+        <div class="nombre-estudio">
+
+            {% if estudio.name == 'Kyoto Animation' %}
+                <img src="{% static 'appAnime/img/kyoto.jpg' %}"
+                     alt="Logo Kyoto Animation"
+                     class="logo-estudio">
+
+            {% elif estudio.name == 'MAPPA' %}
+                <img src="{% static 'appAnime/img/mappa.webp' %}"
+                     alt="Logo MAPPA"
+                     class="logo-estudio">
+
+            {% elif estudio.name == 'Studio Ghibli' %}
+                <img src="{% static 'appAnime/img/Studio_Ghibli.webp' %}"
+                     alt="Logo Studio Ghibli"
+                     class="logo-estudio">
+
+            {% elif estudio.name == 'Ufotable' %}
+                <img src="{% static 'appAnime/img/Ufotable.webp' %}"
+                     alt="Logo Ufotable"
+                     class="logo-estudio">
+            {% endif %}
+
+            <h2>{{ estudio.name }}</h2>
+
+        </div>
+
         <p>{{ estudio.description|truncatewords:25 }}</p>
 
         <a href="{% url 'appAnime:detalle_estudio' estudio.id %}">
             Ver estudio
         </a>
+
     </article>
     {% empty %}
     <p>No hay estudios registrados.</p>

@@ -1,18 +1,13 @@
+
 {% extends 'appAnime/base.html' %}
+{% load static %}
 
 {% block titulo %}{{ serie.title }} | Anime Zone{% endblock %}
 
 {% block contenido %}
 <section class="detalle">
-    {% if serie.image_url %}
-        <img
-            src="{{ serie.image_url }}"
-            alt="Imagen de {{ serie.title }}"
-            class="imagen-detalle"
-        >
-    {% endif %}
 
-    <div>
+    <div class="detalle-texto">
         <p class="etiqueta">DETALLES DEL ANIME</p>
         <h1>{{ serie.title }}</h1>
 
@@ -45,5 +40,24 @@
             </ul>
         {% endif %}
     </div>
+
+    <div class="detalle-imagen">
+        {% if serie.title == 'Jujutsu Kaisen' %}
+            <img src="{% static 'appAnime/img/jujutsu.webp' %}" alt="Jujutsu Kaisen" class="imagen-detalle">
+
+        {% elif serie.title == 'Demon Slayer' %}
+            <img src="{% static 'appAnime/img/demonslayer.jpg' %}" alt="Demon Slayer" class="imagen-detalle">
+
+        {% elif serie.title == 'Spirited Away' %}
+            <img src="{% static 'appAnime/img/spiritedaway.jpg' %}" alt="Spirited Away" class="imagen-detalle">
+
+        {% elif serie.title == 'Violet Evergarden' %}
+            <img src="{% static 'appAnime/img/violet.jpg' %}" alt="Violet Evergarden" class="imagen-detalle">
+
+        {% elif serie.image_url %}
+            <img src="{{ serie.image_url }}" alt="{{ serie.title }}" class="imagen-detalle">
+        {% endif %}
+    </div>
+
 </section>
 {% endblock %}
