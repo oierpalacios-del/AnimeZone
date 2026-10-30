@@ -1,4 +1,9 @@
 
+/* ========================================
+   ANIMEZONE - ESTILO KAWAII
+   Violeta, lavanda y blanco
+======================================== */
+
 /* Configuración general */
 
 * {
@@ -11,20 +16,23 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
+    background-color: #f6f1ff;
+    color: #64487e;
 }
 
 a {
-    color: #ffcc00;
+    color: #9864d4;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #ffe680;
+    color: #c489dc;
 }
 
-/* Cabecera y navegación */
+/* ========================================
+   CABECERA
+======================================== */
 
 .cabecera {
     display: flex;
@@ -33,30 +41,71 @@ a:hover {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px 6%;
-    background-color: #000000;
+    background-color: #ffffff;
+    border-bottom: 3px solid #eadbfa;
+    box-shadow: 0 3px 15px rgba(152, 100, 212, 0.08);
 }
 
+/* Logo AnimeZone */
+
 .logo {
-    color: white;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #8150bd;
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
 }
+
+.logo:hover {
+    color: #a779d5;
+}
+
+.logo-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background-color: #ede1ff;
+    color: #9461d9;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.corazon {
+    color: #d79bda;
+}
+
+/* Menú de navegación */
 
 nav {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
-    background-color: #000000;
+    gap: 12px;
 }
 
 nav a {
-    color: #ffcc00;
+    display: inline-block;
+    padding: 10px 14px;
+    color: #8150bd;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
 }
 
 nav a:hover {
-    color: white;
+    background-color: #f0e5ff;
+    color: #70409f;
 }
 
-/* Contenido */
+/* ========================================
+   CONTENIDO GENERAL
+======================================== */
 
 .contenedor {
     width: 88%;
@@ -66,63 +115,109 @@ nav a:hover {
     flex: 1;
 }
 
-/* Página de inicio */
+h1,
+h2,
+h3 {
+    color: #7950a4;
+}
+
+p {
+    line-height: 1.7;
+}
+
+/* ========================================
+   INICIO - HERO
+======================================== */
 
 .hero {
-    padding: 60px 30px;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
     margin-bottom: 45px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #b00000, #750000);
-    color: white;
+    border-radius: 24px;
+    background: linear-gradient(
+        135deg,
+        #e4d2fa,
+        #f4e7fc
+    );
+    color: #765d8b;
+    box-shadow: 0 8px 25px rgba(152, 100, 212, 0.08);
 }
 
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.15;
+    line-height: 1.2;
     max-width: 750px;
-    color: white;
+    color: #6e3ca1;
+}
+
+.hero p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    color: #765d8b;
 }
 
 .etiqueta {
-    color: #ffcc00;
+    color: #8c61b1;
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 1.5px;
 }
 
-/* Botones */
+/* ========================================
+   BOTONES
+======================================== */
 
 .boton {
     display: inline-block;
-    padding: 12px 20px;
+    padding: 13px 22px;
     margin-top: 15px;
-    background-color: #ffcc00;
-    color: black;
-    border-radius: 8px;
+    background-color: #9864d4;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
     font-weight: bold;
+    box-shadow: 0 4px 12px rgba(152, 100, 212, 0.15);
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
 }
 
 .boton:hover {
-    background-color: #ffe066;
-    color: black;
+    background-color: #8250bf;
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* Tarjetas de series, géneros y estudios */
+/* ========================================
+   TARJETAS
+======================================== */
 
 .rejilla {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+    );
     gap: 24px;
     margin-top: 25px;
 }
 
 .tarjeta {
     overflow: hidden;
-    border: 1px solid #b00000;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #b00000, #8b0000);
-    color: white;
+    border: 1px solid #e8d9f8;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #64487e;
+    box-shadow: 0 5px 18px rgba(152, 100, 212, 0.08);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(152, 100, 212, 0.16);
 }
 
 .tarjeta-contenido {
@@ -132,32 +227,37 @@ nav a:hover {
 .tarjeta h2,
 .tarjeta h3 {
     margin-top: 0;
-    color: white;
+    color: #7950a4;
 }
 
 .tarjeta p {
-    color: white;
+    color: #806a91;
 }
 
 .tarjeta a {
-    color: #ffcc00;
+    color: #a76cce;
+    font-weight: bold;
 }
 
 .tarjeta a:hover {
-    color: #ffe680;
+    color: #8150bd;
 }
 
-/* Imágenes de los animes */
+/* ========================================
+   IMÁGENES DE ANIME
+======================================== */
 
 .imagen-anime {
     display: block;
     width: 100%;
     height: 280px;
     object-fit: cover;
-    background-color: #1a1a1a;
+    background-color: #eee3fa;
 }
 
-/* Página de detalles de los animes */
+/* ========================================
+   PÁGINAS DE DETALLE
+======================================== */
 
 .detalle {
     display: grid;
@@ -166,9 +266,11 @@ nav a:hover {
     align-items: center;
     margin-top: 25px;
     padding: 35px;
-    background: linear-gradient(135deg, #b00000, #750000);
-    color: white;
-    border-radius: 12px;
+    border: 1px solid #eadbfa;
+    border-radius: 22px;
+    background: #ffffff;
+    color: #64487e;
+    box-shadow: 0 6px 22px rgba(152, 100, 212, 0.08);
 }
 
 .detalle-texto {
@@ -176,22 +278,26 @@ nav a:hover {
 }
 
 .detalle h1,
-.detalle h2,
+.detalle h2 {
+    color: #7950a4;
+}
+
 .detalle p,
 .detalle li {
-    color: white;
+    color: #765d8b;
 }
 
 .detalle .etiqueta {
-    color: #ffcc00;
+    color: #9864d4;
 }
 
 .detalle a {
-    color: #ffcc00;
+    color: #9864d4;
+    font-weight: bold;
 }
 
 .detalle a:hover {
-    color: #ffe680;
+    color: #c489dc;
 }
 
 .detalle-imagen {
@@ -199,21 +305,25 @@ nav a:hover {
 }
 
 .imagen-detalle {
+    display: block;
     width: 100%;
     max-height: 450px;
-    border-radius: 12px;
+    border-radius: 18px;
     object-fit: cover;
 }
 
-/* Logos de los estudios */
+/* ========================================
+   LOGOS DE LOS ESTUDIOS
+======================================== */
 
 .logo-estudio {
     width: 65px;
     height: 65px;
     object-fit: contain;
-    background-color: white;
+    background-color: #ffffff;
     padding: 7px;
-    border-radius: 10px;
+    border: 1px solid #eee3fa;
+    border-radius: 12px;
     flex-shrink: 0;
 }
 
@@ -228,35 +338,69 @@ nav a:hover {
     margin: 0;
 }
 
-/* Listas y enlaces */
+/* ========================================
+   LISTAS Y ENLACES
+======================================== */
 
 .lista-enlaces li {
     margin-bottom: 12px;
 }
 
 .lista-enlaces a {
-    color: #ffcc00;
+    color: #9864d4;
 }
 
-/* Pie de página */
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
 
 .pie {
     padding: 25px 12px;
     text-align: center;
-    color: lightgray;
-    background-color: #000000;
+    color: #825baa;
+    background-color: #e9dcf8;
+    border-top: 2px solid #dfc9f5;
 }
 
-/* Adaptación a móviles */
+.pie p {
+    margin: 0;
+}
+
+/* ========================================
+   ADAPTACIÓN A MÓVILES
+======================================== */
 
 @media (max-width: 768px) {
+
     .cabecera {
         flex-direction: column;
         align-items: flex-start;
+        padding: 16px 5%;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        gap: 8px;
+    }
+
+    .logo-icono {
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
     }
 
     .contenedor {
         width: 92%;
+        margin: 25px auto;
     }
 
     .hero {
