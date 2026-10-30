@@ -1,9 +1,3 @@
-
-/* ========================================
-   ANIMEZONE - ESTILO KAWAII
-   Violeta, lavanda y blanco
-======================================== */
-
 /* Configuración general */
 
 * {
@@ -30,9 +24,7 @@ a:hover {
     color: #c489dc;
 }
 
-/* ========================================
-   CABECERA
-======================================== */
+/* CABECERA */
 
 .cabecera {
     display: flex;
@@ -41,7 +33,7 @@ a:hover {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px 6%;
-    background-color: #ffffff;
+    background-color: white;
     border-bottom: 3px solid #eadbfa;
     box-shadow: 0 3px 15px rgba(152, 100, 212, 0.08);
 }
@@ -103,9 +95,7 @@ nav a:hover {
     color: #70409f;
 }
 
-/* ========================================
-   CONTENIDO GENERAL
-======================================== */
+/* CONTENIDO GENERAL */
 
 .contenedor {
     width: 88%;
@@ -125,9 +115,7 @@ p {
     line-height: 1.7;
 }
 
-/* ========================================
-   INICIO - HERO
-======================================== */
+/* INICIO - HERO */
 
 .hero {
     position: relative;
@@ -135,11 +123,7 @@ p {
     padding: 60px 40px;
     margin-bottom: 45px;
     border-radius: 24px;
-    background: linear-gradient(
-        135deg,
-        #e4d2fa,
-        #f4e7fc
-    );
+    background: linear-gradient(135deg,#e4d2fa,#f4e7fc);
     color: #765d8b;
     box-shadow: 0 8px 25px rgba(152, 100, 212, 0.08);
 }
@@ -165,41 +149,32 @@ p {
     letter-spacing: 1.5px;
 }
 
-/* ========================================
-   BOTONES
-======================================== */
+/* BOTONES */
 
 .boton {
     display: inline-block;
     padding: 13px 22px;
     margin-top: 15px;
     background-color: #9864d4;
-    color: #ffffff;
+    color: white;
     border: none;
     border-radius: 25px;
     font-size: 1rem;
     font-weight: bold;
     box-shadow: 0 4px 12px rgba(152, 100, 212, 0.15);
-    transition: background-color 0.2s ease,
-                transform 0.2s ease;
 }
 
 .boton:hover {
     background-color: #8250bf;
-    color: #ffffff;
+    color: white;
     transform: translateY(-2px);
 }
 
-/* ========================================
-   TARJETAS
-======================================== */
+/* TARJETAS */
 
 .rejilla {
     display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(230px, 1fr)
-    );
+    grid-template-columns: repeat(auto-fit,minmax(230px, 1fr));
     gap: 24px;
     margin-top: 25px;
 }
@@ -208,11 +183,9 @@ p {
     overflow: hidden;
     border: 1px solid #e8d9f8;
     border-radius: 20px;
-    background: #ffffff;
+    background: white;
     color: #64487e;
     box-shadow: 0 5px 18px rgba(152, 100, 212, 0.08);
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
 }
 
 .tarjeta:hover {
@@ -243,9 +216,7 @@ p {
     color: #8150bd;
 }
 
-/* ========================================
-   IMÁGENES DE ANIME
-======================================== */
+/*  IMÁGENES DE ANIME */
 
 .imagen-anime {
     display: block;
@@ -255,9 +226,7 @@ p {
     background-color: #eee3fa;
 }
 
-/* ========================================
-   PÁGINAS DE DETALLE
-======================================== */
+/* PÁGINAS DE DETALLE */
 
 .detalle {
     display: grid;
@@ -268,7 +237,7 @@ p {
     padding: 35px;
     border: 1px solid #eadbfa;
     border-radius: 22px;
-    background: #ffffff;
+    background: white;
     color: #64487e;
     box-shadow: 0 6px 22px rgba(152, 100, 212, 0.08);
 }
@@ -312,9 +281,7 @@ p {
     object-fit: cover;
 }
 
-/* ========================================
-   LOGOS DE LOS ESTUDIOS
-======================================== */
+/* LOGOS DE LOS ESTUDIOS */
 
 .logo-estudio {
     width: 65px;
@@ -338,9 +305,7 @@ p {
     margin: 0;
 }
 
-/* ========================================
-   LISTAS Y ENLACES
-======================================== */
+/* LISTAS Y ENLACES */
 
 .lista-enlaces li {
     margin-bottom: 12px;
@@ -350,9 +315,7 @@ p {
     color: #9864d4;
 }
 
-/* ========================================
-   PIE DE PÁGINA
-======================================== */
+/* PIE DE PÁGINA */
 
 .pie {
     padding: 25px 12px;
@@ -364,59 +327,4 @@ p {
 
 .pie p {
     margin: 0;
-}
-
-/* ========================================
-   ADAPTACIÓN A MÓVILES
-======================================== */
-
-@media (max-width: 768px) {
-
-    .cabecera {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 16px 5%;
-    }
-
-    .logo {
-        font-size: 1.6rem;
-        gap: 8px;
-    }
-
-    .logo-icono {
-        width: 40px;
-        height: 40px;
-        font-size: 1.6rem;
-    }
-
-    nav {
-        gap: 5px;
-    }
-
-    nav a {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-    }
-
-    .contenedor {
-        width: 92%;
-        margin: 25px auto;
-    }
-
-    .hero {
-        padding: 35px 25px;
-    }
-
-    .detalle {
-        grid-template-columns: 1fr;
-        padding: 25px;
-    }
-
-    .imagen-detalle {
-        max-height: 400px;
-    }
-
-    .rejilla {
-        grid-template-columns: 1fr;
-    }
 }
