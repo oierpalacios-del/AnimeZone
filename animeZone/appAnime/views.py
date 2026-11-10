@@ -16,7 +16,7 @@ def home(request):
 
     return render(
         request,
-        'appAnime/home.html',
+        'appAnime/index.html',
         {'destacados': destacados}
     )
 
