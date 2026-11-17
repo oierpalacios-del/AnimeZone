@@ -16,7 +16,11 @@
 
         <div class="tarjeta-contenido">
             <h2>{{ serie.title }}</h2>
-            <p>Género: {{ serie.genre.name }}</p>
+            <p>Género: 
+                <a href="{% url 'appAnime:detalle_genero' serie.genre.id %}">
+                        {{ serie.genre.name }}
+                </a>
+            </p>
             <p>Año: {{ serie.release_year }}</p>
             <p>Valoración: {{ serie.rating }}/10</p>
 
