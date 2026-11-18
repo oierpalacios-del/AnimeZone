@@ -20,10 +20,17 @@
                 {{ serie.genre.name }}
             </a>
         </p>
+        <div class="content">
+            <a name="item1"><h2>Sinopsis</h2></a>
+        
 
-        <h2>Sinopsis</h2>
-        <p>{{ serie.synopsis }}</p>
+				<div class="body" id="item1body">
+                    <p>{{ serie.synopsis }}</p>
+                    </div>
 
+			</div>
+
+		
         <h2>Estudios de animación</h2>
 
         {% if serie.studios.all %}
@@ -39,6 +46,7 @@
                 {% endfor %}
             </ul>
         {% endif %}
+        </div>
     </div>
 
     <div class="detalle-imagen">
