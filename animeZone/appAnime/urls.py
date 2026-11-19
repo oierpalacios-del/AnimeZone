@@ -1,41 +1,49 @@
 from django.urls import path
-from . import views
+from .views import (
+    HomeView,
+    AnimeListView,
+    AnimeDetailView,
+    GenreListView,
+    GenreDetailView,
+    StudioListView,
+    StudioDetailView,
+)
 
 app_name = 'appAnime'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', HomeView.as_view(), name='home'),
 
     path(
         'series/',
-        views.lista_series,
+        AnimeListView.as_view(),
         name='lista_series'
     ),
     path(
         'series/<int:anime_id>/',
-        views.detalle_serie,
+        AnimeDetailView.as_view(),
         name='detalle_serie'
     ),
 
     path(
         'generos/',
-        views.lista_generos,
+        GenreListView.as_view(),
         name='lista_generos'
     ),
     path(
         'generos/<int:genre_id>/',
-        views.detalle_genero,
+        GenreDetailView.as_view(),
         name='detalle_genero'
     ),
 
     path(
         'estudios/',
-        views.lista_estudios,
+        StudioListView.as_view(),
         name='lista_estudios'
     ),
     path(
         'estudios/<int:studio_id>/',
-        views.detalle_estudio,
+        StudioDetailView.as_view(),
         name='detalle_estudio'
     ),
 ]

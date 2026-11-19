@@ -1,97 +1,78 @@
-from django.shortcuts import render, get_object_or_404
-
+from django.views.generic import TemplateView, ListView, DetailView
 from .models import Anime, Genre, Studio
 
 
-# Inicio: una serie mejor valorada por género
-def home(request):
-    generos = Genre.objects.order_by('name')
-    destacados = []
+# 1. Inicio: una serie mejor valorada por género (Sustituye a home)
+class HomeView(TemplateView):
+    template_name = 'appAnime/index.html'
 
-    for genero in generos:
-        serie = genero.series.order_by('-rating', 'title').first()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        generos = Genre.objects.order_by('name')
+        destacados = []
 
-        if serie is not None:
-            destacados.append(serie)
+        for genero in generos:
+            serie = genero.series.order_by('-rating', 'title').first()
+            if serie is not None:
+                destacados.append(serie)
 
-    return render(
-        request,
-        'appAnime/index.html',
-        {'destacados': destacados}
-    )
+        context['destacados'] = destacados
+        return context
 
 
-# Listado de todas las series
-def lista_series(request):
-    series = (
+# 2. Listado de todas las series (Sustituye a lista_series)
+class AnimeListView(ListView):
+    model = Anime
+    template_name = 'appAnime/lista_series.html'
+    context_object_name = 'series'
+    queryset = (
         Anime.objects
         .select_related('genre')
         .prefetch_related('studios')
         .order_by('title')
     )
 
-    return render(
-        request,
-        'appAnime/lista_series.html',
-        {'series': series}
-    )
 
-
-# Detalle de una serie
-def detalle_serie(request, anime_id):
-    serie = get_object_or_404(
+# 3. Detalle de una serie (Sustituye a detalle_serie)
+class AnimeDetailView(DetailView):
+    model = Anime
+    template_name = 'appAnime/detalle_serie.html'
+    context_object_name = 'serie'
+    pk_url_kwarg = 'anime_id'
+    queryset = (
         Anime.objects
         .select_related('genre')
-        .prefetch_related('studios'),
-        pk=anime_id
-    )
-
-    return render(
-        request,
-        'appAnime/detalle_serie.html',
-        {'serie': serie}
+        .prefetch_related('studios')
     )
 
 
-# Listado de géneros
-def lista_generos(request):
-    generos = Genre.objects.order_by('name')
-
-    return render(
-        request,
-        'appAnime/lista_generos.html',
-        {'generos': generos}
-    )
+# 4. Listado de géneros (Sustituye a lista_generos)
+class GenreListView(ListView):
+    model = Genre
+    template_name = 'appAnime/lista_generos.html'
+    context_object_name = 'generos'
+    queryset = Genre.objects.order_by('name')
 
 
-# Detalle de un género
-def detalle_genero(request, genre_id):
-    genero = get_object_or_404(Genre, pk=genre_id)
-
-    return render(
-        request,
-        'appAnime/detalle_genero.html',
-        {'genero': genero}
-    )
+# 5. Detalle de un género (Sustituye a detalle_genero)
+class GenreDetailView(DetailView):
+    model = Genre
+    template_name = 'appAnime/detalle_genero.html'
+    context_object_name = 'genero'
+    pk_url_kwarg = 'genre_id'
 
 
-# Listado de estudios
-def lista_estudios(request):
-    estudios = Studio.objects.order_by('name')
-
-    return render(
-        request,
-        'appAnime/lista_estudios.html',
-        {'estudios': estudios}
-    )
+# 6. Listado de estudios (Sustituye a lista_estudios)
+class StudioListView(ListView):
+    model = Studio
+    template_name = 'appAnime/lista_estudios.html'
+    context_object_name = 'estudios'
+    queryset = Studio.objects.order_by('name')
 
 
-# Detalle de un estudio
-def detalle_estudio(request, studio_id):
-    estudio = get_object_or_404(Studio, pk=studio_id)
-
-    return render(
-        request,
-        'appAnime/detalle_estudio.html',
-        {'estudio': estudio}
-    )
+# 7. Detalle de un estudio (Sustituye a detalle_estudio)
+class StudioDetailView(DetailView):
+    model = Studio
+    template_name = 'appAnime/detalle_estudio.html'
+    context_object_name = 'estudio'
+    pk_url_kwarg = 'studio_id'
