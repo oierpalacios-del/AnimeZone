@@ -1,5 +1,7 @@
 {% extends 'appAnime/base.html' %}
 
+{% load i18n %}
+
 {% block titulo %}{{ estudio.name }} | Anime Zone{% endblock %}
 
 {% block contenido %}
@@ -7,22 +9,22 @@
 
 <p>{{ estudio.description }}</p>
 
-<h2>Series en las que participa</h2>
+<h2>{% trans "Series en las que participa" %}</h2>
 
 <div class="rejilla">
     {% for serie in estudio.series.all %}
     <article class="tarjeta tarjeta-contenido">
         <h3>{{ serie.title }}</h3>
-        <p>Género: {{ serie.genre.name }}</p>
-        <p>Año: {{ serie.release_year }}</p>
-        <p>Valoración: {{ serie.rating }}/10</p>
+        <p>{% trans "Género" %}: {{ serie.genre.name }}</p>
+        <p>{% trans "Año" %}: {{ serie.release_year }}</p>
+        <p>{% trans "Valoración" %}: {{ serie.rating }}/10</p>
 
         <a href="{% url 'appAnime:detalle_serie' serie.id %}">
-            Ver serie
+            {% trans "Ver serie" %}
         </a>
     </article>
     {% empty %}
-    <p>Este estudio todavía no tiene series asociadas.</p>
+    <p>{% trans "Este estudio todavía no tiene series asociadas." %}</p>
     {% endfor %}
 </div>
 {% endblock %}

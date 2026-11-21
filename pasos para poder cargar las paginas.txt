@@ -1,3 +1,9 @@
+en cmd:
 1 for /f "delims=" %i in ('python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"') do @set "DJANGO_SECRET_KEY=%i"
+
+2 py manage.py runserver
+
+en powershell:
+1 $env:DJANGO_SECRET_KEY = python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 
 2 py manage.py runserver

@@ -1,9 +1,11 @@
 {% extends 'appAnime/base.html' %}
 
-{% block titulo %}Series | Anime Zone{% endblock %}
+{% load i18n %}
+
+{% block titulo %}{% trans "Series" %} | Anime Zone{% endblock %}
 
 {% block contenido %}
-<h1>Todas las series</h1>
+<h1>{% trans "Todas las series" %}</h1>
 
 <div class="rejilla">
     {% for serie in series %}
@@ -11,26 +13,26 @@
         {% if serie.image_url %}
         <img class="imagen-anime"
              src="{{ serie.image_url }}"
-             alt="Portada de {{ serie.title }}">
+             alt="{% blocktrans with titulo=serie.title %}Portada de {{ titulo }}{% endblocktrans %}">
         {% endif %}
 
         <div class="tarjeta-contenido">
             <h2>{{ serie.title }}</h2>
-            <p>Género: 
+            <p>{% trans "Género" %}:
                 <a href="{% url 'appAnime:detalle_genero' serie.genre.id %}">
                         {{ serie.genre.name }}
                 </a>
             </p>
-            <p>Año: {{ serie.release_year }}</p>
-            <p>Valoración: {{ serie.rating }}/10</p>
+            <p>{% trans "Año" %}: {{ serie.release_year }}</p>
+            <p>{% trans "Valoración" %}: {{ serie.rating }}/10</p>
 
             <a href="{% url 'appAnime:detalle_serie' serie.id %}">
-                Ver detalles
+                {% trans "Ver detalles" %}
             </a>
         </div>
     </article>
     {% empty %}
-    <p>No hay series registradas.</p>
+    <p>{% trans "No hay series registradas." %}</p>
     {% endfor %}
 </div>
 {% endblock %}

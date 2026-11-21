@@ -1,5 +1,7 @@
 {% extends 'appAnime/base.html' %}
 
+{% load i18n %}
+
 {% block titulo %}{{ genero.name }} | Anime Zone{% endblock %}
 
 {% block contenido %}
@@ -7,21 +9,21 @@
 
 <p>{{ genero.description }}</p>
 
-<h2>Series de este género</h2>
+<h2>{% trans "Series de este género" %}</h2>
 
 <div class="rejilla">
     {% for serie in genero.series.all %}
     <article class="tarjeta tarjeta-contenido">
         <h3>{{ serie.title }}</h3>
-        <p>Año: {{ serie.release_year }}</p>
-        <p>Valoración: {{ serie.rating }}/10</p>
+        <p>{% trans "Año" %}: {{ serie.release_year }}</p>
+        <p>{% trans "Valoración" %}: {{ serie.rating }}/10</p>
 
         <a href="{% url 'appAnime:detalle_serie' serie.id %}">
-            Ver serie
+            {% trans "Ver serie" %}
         </a>
     </article>
     {% empty %}
-    <p>Aún no hay series asociadas a este género.</p>
+    <p>{% trans "Aún no hay series asociadas a este género." %}</p>
     {% endfor %}
 </div>
 {% endblock %}

@@ -1,19 +1,21 @@
 {% extends 'appAnime/base.html' %}
 
-{% block titulo %}Inicio | Anime Zone{% endblock %}
+{% load i18n %}
+
+{% block titulo %}{% trans "Inicio" %} | Anime Zone{% endblock %}
 
 {% block contenido %}
 <section class="hero">
-    <p class="etiqueta">TU UNIVERSO ANIME</p>
-    <h1>Descubre tu próximo anime favorito</h1>
-    <p>Explora series, géneros y los estudios que les dan vida.</p>
+    <p class="etiqueta">{% trans "TU UNIVERSO ANIME" %}</p>
+    <h1>{% trans "Descubre tu próximo anime favorito" %}</h1>
+    <p>{% trans "Explora series, géneros y los estudios que les dan vida." %}</p>
 
     <a class="boton" href="{% url 'appAnime:lista_series' %}">
-        Explorar series
+        {% trans "Explorar series" %}
     </a>
 </section>
 
-<h2>El mejor anime de cada género</h2>
+<h2>{% trans "El mejor anime de cada género" %}</h2>
 
 <div class="rejilla">
     {% for serie in destacados %}
@@ -21,22 +23,22 @@
         {% if serie.image_url %}
         <img class="imagen-anime"
              src="{{ serie.image_url }}"
-             alt="Portada de {{ serie.title }}">
+             alt="{% blocktrans with titulo=serie.title %}Portada de {{ titulo }}{% endblocktrans %}">
         {% endif %}
 
         <div class="tarjeta-contenido">
             <p class="etiqueta">{{ serie.genre.name }}</p>
             <h3>{{ serie.title }}</h3>
-            <p>Año: {{ serie.release_year }}</p>
-            <p>Valoración: {{ serie.rating }}/10</p>
+            <p>{% trans "Año" %}: {{ serie.release_year }}</p>
+            <p>{% trans "Valoración" %}: {{ serie.rating }}/10</p>
 
             <a href="{% url 'appAnime:detalle_serie' serie.id %}">
-                Ver detalles
+                {% trans "Ver detalles" %}
             </a>
         </div>
     </article>
     {% empty %}
-    <p>Aún no hay series registradas.</p>
+    <p>{% trans "Aún no hay series registradas." %}</p>
     {% endfor %}
 </div>
 {% endblock %}

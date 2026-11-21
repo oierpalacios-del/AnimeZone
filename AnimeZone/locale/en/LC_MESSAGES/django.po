@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-21 11:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\animeZone\settings.py:99
+msgid "Español"
+msgstr "Spanish"
+
+#: .\animeZone\settings.py:100
+msgid "Inglés"
+msgstr "English"
+
+#: .\animeZone\settings.py:101
+msgid "Euskera"
+msgstr "Basque"
+
+#: .\appAnime\templates\appAnime\base.html:24
+#: .\appAnime\templates\appAnime\index.html:5
+msgid "Inicio"
+msgstr "Main Page"
+
+#: .\appAnime\templates\appAnime\base.html:25
+#: .\appAnime\templates\appAnime\lista_series.html:5
+msgid "Series"
+msgstr "Series"
+
+#: .\appAnime\templates\appAnime\base.html:26
+#: .\appAnime\templates\appAnime\lista_generos.html:5
+msgid "Géneros"
+msgstr "Genre"
+
+#: .\appAnime\templates\appAnime\base.html:27
+#: .\appAnime\templates\appAnime\lista_estudios.html:7
+msgid "Estudios"
+msgstr "Studios"
+
+#: .\appAnime\templates\appAnime\base.html:37
+#: .\appAnime\templates\appAnime\index.html:10
+msgid "Descubre tu próximo anime favorito"
+msgstr "Discover your next favourite anime"
+
+#: .\appAnime\templates\appAnime\detalle_estudio.html:12
+msgid "Series en las que participa"
+msgstr "Series in which they participate"
+
+#: .\appAnime\templates\appAnime\detalle_estudio.html:18
+#: .\appAnime\templates\appAnime\lista_series.html:21
+msgid "Género"
+msgstr "Genre"
+
+#: .\appAnime\templates\appAnime\detalle_estudio.html:19
+#: .\appAnime\templates\appAnime\detalle_genero.html:18
+#: .\appAnime\templates\appAnime\detalle_serie.html:16
+#: .\appAnime\templates\appAnime\index.html:32
+#: .\appAnime\templates\appAnime\lista_series.html:26
+msgid "Año"
+msgstr "Year"
+
+#: .\appAnime\templates\appAnime\detalle_estudio.html:20
+#: .\appAnime\templates\appAnime\detalle_genero.html:19
+#: .\appAnime\templates\appAnime\detalle_serie.html:17
+#: .\appAnime\templates\appAnime\index.html:33
+#: .\appAnime\templates\appAnime\lista_series.html:27
+msgid "Valoración"
+msgstr "Rating"
+
+#: .\appAnime\templates\appAnime\detalle_estudio.html:23
+#: .\appAnime\templates\appAnime\detalle_genero.html:22
+msgid "Ver serie"
+msgstr "Watch series"
+
+#: .\appAnime\templates\appAnime\detalle_estudio.html:27
+msgid "Este estudio todavía no tiene series asociadas."
+msgstr "This studio has not any associated series yet"
+
+#: .\appAnime\templates\appAnime\detalle_genero.html:12
+msgid "Series de este género"
+msgstr "Series of this genre"
+
+#: .\appAnime\templates\appAnime\detalle_genero.html:26
+msgid "Aún no hay series asociadas a este género."
+msgstr "This genre has not any associated seres yet"
+
+#: .\appAnime\templates\appAnime\detalle_serie.html:13
+msgid "DETALLES DEL ANIME"
+msgstr "ANIME DEATILS"
+
+#: .\appAnime\templates\appAnime\detalle_serie.html:20
+msgid "Género principal"
+msgstr "Main Genre"
+
+#: .\appAnime\templates\appAnime\detalle_serie.html:26
+msgid "Sinopsis"
+msgstr "Summary"
+
+#: .\appAnime\templates\appAnime\detalle_serie.html:36
+#: .\appAnime\templates\appAnime\lista_estudios.html:10
+msgid "Estudios de animación"
+msgstr "Animation studio"
+
+#: .\appAnime\templates\appAnime\detalle_serie.html:47
+msgid "No hay estudios asociados."
+msgstr "There is no associated studio"
+
+#: .\appAnime\templates\appAnime\index.html:9
+msgid "TU UNIVERSO ANIME"
+msgstr "YOUR ANIME UNIVERSE"
+
+#: .\appAnime\templates\appAnime\index.html:11
+msgid "Explora series, géneros y los estudios que les dan vida."
+msgstr "Search series, genre and studios that give them life"
+
+#: .\appAnime\templates\appAnime\index.html:14
+msgid "Explorar series"
+msgstr "Search series"
+
+#: .\appAnime\templates\appAnime\index.html:18
+msgid "El mejor anime de cada género"
+msgstr "Best anime of each genre"
+
+#: .\appAnime\templates\appAnime\index.html:26
+#: .\appAnime\templates\appAnime\lista_series.html:16
+#, python-format
+msgid "Portada de %(titulo)s"
+msgstr "Title page of %(titulo)s"
+
+#: .\appAnime\templates\appAnime\index.html:36
+#: .\appAnime\templates\appAnime\lista_series.html:30
+msgid "Ver detalles"
+msgstr "More details"
+
+#: .\appAnime\templates\appAnime\index.html:41
+msgid "Aún no hay series registradas."
+msgstr "There is no registered series yet."
+
+#: .\appAnime\templates\appAnime\lista_estudios.html:20
+#: .\appAnime\templates\appAnime\lista_estudios.html:25
+#: .\appAnime\templates\appAnime\lista_estudios.html:30
+#: .\appAnime\templates\appAnime\lista_estudios.html:35
+msgid "Logo"
+msgstr "Logo"
+
+#: .\appAnime\templates\appAnime\lista_estudios.html:46
+msgid "Ver estudio"
+msgstr "See studio"
+
+#: .\appAnime\templates\appAnime\lista_estudios.html:51
+msgid "No hay estudios registrados."
+msgstr "There is no registered studios yet"
+
+#: .\appAnime\templates\appAnime\lista_generos.html:8
+msgid "Géneros de anime"
+msgstr "Anime genre"
+
+#: .\appAnime\templates\appAnime\lista_generos.html:17
+msgid "Ver género"
+msgstr "See genre"
+
+#: .\appAnime\templates\appAnime\lista_generos.html:21
+msgid "No hay géneros registrados."
+msgstr "Thre is no registered genre yet"
+
+#: .\appAnime\templates\appAnime\lista_series.html:8
+msgid "Todas las series"
+msgstr "All series"
+
+#: .\appAnime\templates\appAnime\lista_series.html:35
+msgid "No hay series registradas."
+msgstr "Thre is no registered series yet"
+
+#~ msgid "Spanish"
+#~ msgstr "Spanish"
+
+#~ msgid "English"
+#~ msgstr "English"
