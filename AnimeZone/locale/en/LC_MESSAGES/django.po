@@ -87,7 +87,7 @@ msgstr "Watch series"
 
 #: .\appAnime\templates\appAnime\detalle_estudio.html:27
 msgid "Este estudio todavía no tiene series asociadas."
-msgstr "This studio has not any associated series yet"
+msgstr "This studio has not any associated series yet."
 
 #: .\appAnime\templates\appAnime\detalle_genero.html:12
 msgid "Series de este género"
@@ -95,11 +95,11 @@ msgstr "Series of this genre"
 
 #: .\appAnime\templates\appAnime\detalle_genero.html:26
 msgid "Aún no hay series asociadas a este género."
-msgstr "This genre has not any associated seres yet"
+msgstr "This genre has not any associated seres yet."
 
 #: .\appAnime\templates\appAnime\detalle_serie.html:13
 msgid "DETALLES DEL ANIME"
-msgstr "ANIME DEATILS"
+msgstr "ANIME DETAILS"
 
 #: .\appAnime\templates\appAnime\detalle_serie.html:20
 msgid "Género principal"
@@ -116,7 +116,7 @@ msgstr "Animation studio"
 
 #: .\appAnime\templates\appAnime\detalle_serie.html:47
 msgid "No hay estudios asociados."
-msgstr "There is no associated studio"
+msgstr "There is no associated studio."
 
 #: .\appAnime\templates\appAnime\index.html:9
 msgid "TU UNIVERSO ANIME"
@@ -124,7 +124,7 @@ msgstr "YOUR ANIME UNIVERSE"
 
 #: .\appAnime\templates\appAnime\index.html:11
 msgid "Explora series, géneros y los estudios que les dan vida."
-msgstr "Search series, genre and studios that give them life"
+msgstr "Search series, genre and studios that give them life."
 
 #: .\appAnime\templates\appAnime\index.html:14
 msgid "Explorar series"
@@ -162,7 +162,7 @@ msgstr "See studio"
 
 #: .\appAnime\templates\appAnime\lista_estudios.html:51
 msgid "No hay estudios registrados."
-msgstr "There is no registered studios yet"
+msgstr "There is no registered studios yet."
 
 #: .\appAnime\templates\appAnime\lista_generos.html:8
 msgid "Géneros de anime"
@@ -174,7 +174,7 @@ msgstr "See genre"
 
 #: .\appAnime\templates\appAnime\lista_generos.html:21
 msgid "No hay géneros registrados."
-msgstr "Thre is no registered genre yet"
+msgstr "Thre is no registered genre yet."
 
 #: .\appAnime\templates\appAnime\lista_series.html:8
 msgid "Todas las series"
@@ -182,7 +182,7 @@ msgstr "All series"
 
 #: .\appAnime\templates\appAnime\lista_series.html:35
 msgid "No hay series registradas."
-msgstr "Thre is no registered series yet"
+msgstr "Thre is no registered series yet."
 
 #~ msgid "Spanish"
 #~ msgstr "Spanish"
