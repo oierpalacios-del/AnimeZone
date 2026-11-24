@@ -1,7 +1,7 @@
+
 {% extends 'appAnime/base.html' %}
 
 {% load i18n %}
-
 {% load static %}
 
 {% block titulo %}{{ serie.title }} | Anime Zone{% endblock %}
@@ -22,33 +22,41 @@
                 {{ serie.genre.name }}
             </a>
         </p>
+
+        <!-- SINOPSIS DESPLEGABLE -->
         <div class="content">
-            <a name="item1"><h2>{% trans "Sinopsis" %}</h2></a>
+            <a class="item1" name="item1" href="javascript:void(0);">
+                <h2>{% trans "Sinopsis" %}</h2>
+            </a>
 
-
-				<div class="body" id="item1body">
-                    <p>{{ serie.synopsis }}</p>
-                    </div>
-
-			</div>
-
-
-        <h2>{% trans "Estudios de animación" %}</h2>
-
-        {% if serie.studios.all %}
-            <ul>
-                {% for estudio in serie.studios.all %}
-                    <li>
-                        <a href="{% url 'appAnime:detalle_estudio' estudio.id %}">
-                            {{ estudio.name }}
-                        </a>
-                    </li>
-                {% empty %}
-                    <li>{% trans "No hay estudios asociados." %}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+            <div class="body" id="item1body">
+                <p>{{ serie.synopsis }}</p>
+            </div>
         </div>
+
+        <!-- ESTUDIOS DESPLEGABLE -->
+        <div class="content">
+            <a class="item2" name="item2" href="javascript:void(0);">
+                <h2>{% trans "Estudios de animación" %}</h2>
+            </a>
+
+            <div class="body" id="item2body">
+                {% if serie.studios.all %}
+                    <ul>
+                        {% for estudio in serie.studios.all %}
+                            <li>
+                                <a href="{% url 'appAnime:detalle_estudio' estudio.id %}">
+                                    {{ estudio.name }}
+                                </a>
+                            </li>
+                        {% empty %}
+                            <li>{% trans "No hay estudios asociados." %}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 
     <div class="detalle-imagen">

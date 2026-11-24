@@ -328,3 +328,9 @@ p {
 .pie p {
     margin: 0;
 }
+
+div.content > a:hover h2 {
+    color: black;
+    background-color: #01dc4e;
+    border-radius: 22px;
+}
