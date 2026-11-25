@@ -7,14 +7,14 @@
 {% block contenido %}
 <h1>{% trans "Todas las series" %}</h1>
 
+{% if user.is_staff %}
+    <a href="{% url 'appAnime:crear_anime' %}">{% trans "Añadir anime" %}</a>
+{% endif %}
+
 <div class="rejilla">
     {% for serie in series %}
     <article class="tarjeta">
-        {% if serie.image_url %}
-        <img class="imagen-anime"
-             src="{{ serie.image_url }}"
-             alt="{% blocktrans with titulo=serie.title %}Portada de {{ titulo }}{% endblocktrans %}">
-        {% endif %}
+       
 
         <div class="tarjeta-contenido">
             <h2>{{ serie.title }}</h2>

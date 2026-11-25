@@ -7,6 +7,7 @@ from .views import (
     GenreDetailView,
     StudioListView,
     StudioDetailView,
+    AnimeCreateView,
 )
 
 app_name = 'appAnime'
@@ -46,4 +47,6 @@ urlpatterns = [
         StudioDetailView.as_view(),
         name='detalle_estudio'
     ),
+    path('series/nuevo/', AnimeCreateView.as_view(), name='crear_anime'),
+    
 ]

@@ -1,5 +1,7 @@
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from django.urls import reverse_lazy
 from .models import Anime, Genre, Studio
+from .forms import AnimeForm
 
 
 # 1. Inicio: una serie mejor valorada por género (Sustituye a home)
@@ -76,3 +78,10 @@ class StudioDetailView(DetailView):
     template_name = 'appAnime/detalle_estudio.html'
     context_object_name = 'estudio'
     pk_url_kwarg = 'studio_id'
+
+# 8. Formulario para añadir nuevos animes
+class AnimeCreateView(CreateView):
+    model = Anime
+    form_class = AnimeForm
+    template_name = 'appAnime/anime_form.html'
+    success_url = reverse_lazy('appAnime:lista_series')

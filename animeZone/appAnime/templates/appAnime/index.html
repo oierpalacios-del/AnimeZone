@@ -20,11 +20,6 @@
 <div class="rejilla">
     {% for serie in destacados %}
     <article class="tarjeta">
-        {% if serie.image_url %}
-        <img class="imagen-anime"
-             src="{{ serie.image_url }}"
-             alt="{% blocktrans with titulo=serie.title %}Portada de {{ titulo }}{% endblocktrans %}">
-        {% endif %}
 
         <div class="tarjeta-contenido">
             <p class="etiqueta">{{ serie.genre.name }}</p>
