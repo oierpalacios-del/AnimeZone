@@ -131,7 +131,7 @@ p {
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.2;
-    max-width: 750px;
+    max-width: 600px;
     color: #6e3ca1;
 }
 
@@ -333,4 +333,19 @@ div.content > a:hover h2 {
     color: black;
     background-color: #01dc4e;
     border-radius: 22px;
+}
+.foto-portada {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    height: auto;
+    pointer-events: none;
+}
+
+.hero h1,
+.hero p,
+.hero .boton {
+    position: relative;
+    z-index: 1;
 }
