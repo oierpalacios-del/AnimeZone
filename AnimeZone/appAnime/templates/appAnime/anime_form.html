@@ -1,0 +1,16 @@
+{% extends 'appAnime/base.html' %}
+{% load i18n %}
+
+{% block titulo %}{% trans "Añadir anime" %} | AnimeZone{% endblock %}
+
+{% block contenido %}
+    <h1>{% trans "Añadir nuevo anime" %}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">{% trans "Guardar anime" %}</button>
+    </form>
+{% endblock %}
