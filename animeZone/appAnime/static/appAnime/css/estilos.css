@@ -349,3 +349,14 @@ div.content > a:hover h2 {
     position: relative;
     z-index: 1;
 }
+/* Quitar flechitas de los campos numéricos */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
