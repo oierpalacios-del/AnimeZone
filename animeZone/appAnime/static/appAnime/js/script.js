@@ -16,11 +16,4 @@ $(document).ready(function() {
         $("div.content > a").trigger("click");
     });
 
-    // 3. Menú lateral: alterna una sección específica con un click
-    $("a.menu").click(function () {
-        var contenido = $(this).attr("name");
-        contenido = "div.content > a." + contenido;
-        $(contenido).trigger("click");
-    });
-
 });
