@@ -360,3 +360,38 @@ input[type="number"] {
     appearance: textfield;
     -moz-appearance: textfield;
 }
+.detalle {
+    grid-template-columns: minmax(0, 1fr) 350px;
+}
+
+.detalle-texto {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.detalle-texto h1,
+.detalle-texto h2,
+.detalle-texto p,
+.detalle-texto li,
+.detalle-texto a,
+.detalle-texto .body {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+    max-width: 100%;
+}
+.tarjeta {
+    min-width: 0;
+}
+
+.tarjeta-contenido {
+    min-width: 0;
+}
+
+.tarjeta h2,
+.tarjeta h3,
+.tarjeta p,
+.tarjeta a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    max-width: 100%;
+}
