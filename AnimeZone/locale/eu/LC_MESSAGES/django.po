@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 11:23+0100\n"
+"POT-Creation-Date: 2026-11-27 10:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,78 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: .\animeZone\settings.py:99
+#: .\animeZone\settings.py:105
 msgid "Español"
 msgstr "Gaztelera"
 
-#: .\animeZone\settings.py:100
+#: .\animeZone\settings.py:106
 msgid "Inglés"
 msgstr "Ingelera"
 
-#: .\animeZone\settings.py:101
+#: .\animeZone\settings.py:107
 msgid "Euskera"
 msgstr "Euskera"
 
+#: .\appAnime\forms.py:16
+msgid "Título"
+msgstr "Izenburua"
+
+#: .\appAnime\forms.py:17 .\appAnime\templates\appAnime\detalle_serie.html:29
+msgid "Sinopsis"
+msgstr "Sinopsi"
+
+#: .\appAnime\forms.py:18
+msgid "Año de estreno"
+msgstr "Estreinaldiaren urtea"
+
+#: .\appAnime\forms.py:19
+#: .\appAnime\templates\appAnime\detalle_estudio.html:20
+#: .\appAnime\templates\appAnime\detalle_genero.html:19
+#: .\appAnime\templates\appAnime\detalle_serie.html:17
+#: .\appAnime\templates\appAnime\index.html:32
+#: .\appAnime\templates\appAnime\lista_series.html:27
+msgid "Valoración"
+msgstr "Balorazio"
+
+#: .\appAnime\forms.py:20
+#: .\appAnime\templates\appAnime\detalle_estudio.html:18
+#: .\appAnime\templates\appAnime\lista_series.html:21
+msgid "Género"
+msgstr "Genero"
+
+#: .\appAnime\forms.py:21 .\appAnime\templates\appAnime\base.html:27
+#: .\appAnime\templates\appAnime\lista_estudios.html:7
+msgid "Estudios"
+msgstr "Estudioak"
+
+#: .\appAnime\forms.py:22
+msgid "URL de la imagen"
+msgstr "Irudiaren URLa"
+
+#: .\appAnime\forms.py:37
+#, python-format
+msgid "El año debe estar entre %(min)s y %(max)s."
+msgstr "Urteak honela egon behar du: %(min) eta %(max)."
+
+#: .\appAnime\forms.py:48
+msgid "La valoración debe estar entre 0 y 10."
+msgstr "Balorazioa 0 eta 10 artekoa izan behar da."
+
+#: .\appAnime\templates\appAnime\anime_form.html:4
+#: .\appAnime\templates\appAnime\lista_series.html:11
+msgid "Añadir anime"
+msgstr "Gehitu animea"
+
+#: .\appAnime\templates\appAnime\anime_form.html:7
+msgid "Añadir nuevo anime"
+msgstr "Gehitu anime berria"
+
+#: .\appAnime\templates\appAnime\anime_form.html:12
+msgid "Guardar anime"
+msgstr "Gorde animea"
+
 #: .\appAnime\templates\appAnime\base.html:24
-#: .\appAnime\templates\appAnime\index.html:5
+#: .\appAnime\templates\appAnime\index.html:6
 msgid "Inicio"
 msgstr "Hasiera"
 
@@ -45,40 +102,30 @@ msgstr "Serieak"
 msgid "Géneros"
 msgstr "Generoak"
 
-#: .\appAnime\templates\appAnime\base.html:27
-#: .\appAnime\templates\appAnime\lista_estudios.html:7
-msgid "Estudios"
-msgstr "Estudioak"
+#: .\appAnime\templates\appAnime\base.html:28
+msgid "Añadir serie"
+msgstr "Gehitu seriea"
 
-#: .\appAnime\templates\appAnime\base.html:37
-#: .\appAnime\templates\appAnime\index.html:10
+#: .\appAnime\templates\appAnime\base.html:34
+msgid "Idioma"
+msgstr "Hizkuntza"
+
+#: .\appAnime\templates\appAnime\base.html:53
+#: .\appAnime\templates\appAnime\index.html:11
 msgid "Descubre tu próximo anime favorito"
-msgstr "Ezagutu hurrengo anime gogokoena"
+msgstr "Ezagutu zure hurrengo anime gogokoena"
 
 #: .\appAnime\templates\appAnime\detalle_estudio.html:12
 msgid "Series en las que participa"
-msgstr "Parte hartzen duen serieak"
-
-#: .\appAnime\templates\appAnime\detalle_estudio.html:18
-#: .\appAnime\templates\appAnime\lista_series.html:21
-msgid "Género"
-msgstr "Genero"
+msgstr "Animazio-estudio honek parte hartzen duen serieak"
 
 #: .\appAnime\templates\appAnime\detalle_estudio.html:19
 #: .\appAnime\templates\appAnime\detalle_genero.html:18
 #: .\appAnime\templates\appAnime\detalle_serie.html:16
-#: .\appAnime\templates\appAnime\index.html:32
+#: .\appAnime\templates\appAnime\index.html:31
 #: .\appAnime\templates\appAnime\lista_series.html:26
 msgid "Año"
-msgstr "Urte"
-
-#: .\appAnime\templates\appAnime\detalle_estudio.html:20
-#: .\appAnime\templates\appAnime\detalle_genero.html:19
-#: .\appAnime\templates\appAnime\detalle_serie.html:17
-#: .\appAnime\templates\appAnime\index.html:33
-#: .\appAnime\templates\appAnime\lista_series.html:27
-msgid "Valoración"
-msgstr "Balorazioak"
+msgstr "Urtea"
 
 #: .\appAnime\templates\appAnime\detalle_estudio.html:23
 #: .\appAnime\templates\appAnime\detalle_genero.html:22
@@ -87,7 +134,7 @@ msgstr "Ikusi seriea"
 
 #: .\appAnime\templates\appAnime\detalle_estudio.html:27
 msgid "Este estudio todavía no tiene series asociadas."
-msgstr "Estudio honek oraindik ez du lotutako serierik."
+msgstr "Animazio-estudio honek oraindik ez du lotutako serierik."
 
 #: .\appAnime\templates\appAnime\detalle_genero.html:12
 msgid "Series de este género"
@@ -99,53 +146,43 @@ msgstr "Oraindik ez dago genero horri lotutako serierik."
 
 #: .\appAnime\templates\appAnime\detalle_serie.html:13
 msgid "DETALLES DEL ANIME"
-msgstr "ANIMEAREN XEHETASUNAK"
+msgstr "ANIME XEHETASUNAK"
 
 #: .\appAnime\templates\appAnime\detalle_serie.html:20
 msgid "Género principal"
 msgstr "Genero nagusia"
 
-#: .\appAnime\templates\appAnime\detalle_serie.html:26
-msgid "Sinopsis"
-msgstr "Sinopsi"
-
-#: .\appAnime\templates\appAnime\detalle_serie.html:36
+#: .\appAnime\templates\appAnime\detalle_serie.html:40
 #: .\appAnime\templates\appAnime\lista_estudios.html:10
 msgid "Estudios de animación"
 msgstr "Animazio-estudioak"
 
-#: .\appAnime\templates\appAnime\detalle_serie.html:47
+#: .\appAnime\templates\appAnime\detalle_serie.html:53
 msgid "No hay estudios asociados."
 msgstr "Ez dago lotutako estudiorik."
 
-#: .\appAnime\templates\appAnime\index.html:9
+#: .\appAnime\templates\appAnime\index.html:10
 msgid "TU UNIVERSO ANIME"
 msgstr "ZURE ANIME UNIBERTSOA"
 
-#: .\appAnime\templates\appAnime\index.html:11
+#: .\appAnime\templates\appAnime\index.html:12
 msgid "Explora series, géneros y los estudios que les dan vida."
-msgstr "Bizitasuna ematen dieten telesailak, generoak eta estudioak arakatzen ditu."
+msgstr "Bizitasuna ematen dieten telesailak, generoak eta animazio-estudioak arakatzen ditu."
 
-#: .\appAnime\templates\appAnime\index.html:14
+#: .\appAnime\templates\appAnime\index.html:15
 msgid "Explorar series"
 msgstr "Serieak esploratu"
 
-#: .\appAnime\templates\appAnime\index.html:18
+#: .\appAnime\templates\appAnime\index.html:22
 msgid "El mejor anime de cada género"
 msgstr "Genero bakoitzeko animerik onena"
 
-#: .\appAnime\templates\appAnime\index.html:26
-#: .\appAnime\templates\appAnime\lista_series.html:16
-#, python-format
-msgid "Portada de %(titulo)s"
-msgstr "%(titulo)ren portada"
-
-#: .\appAnime\templates\appAnime\index.html:36
+#: .\appAnime\templates\appAnime\index.html:35
 #: .\appAnime\templates\appAnime\lista_series.html:30
 msgid "Ver detalles"
 msgstr "Ikusi xehetasunak"
 
-#: .\appAnime\templates\appAnime\index.html:41
+#: .\appAnime\templates\appAnime\index.html:40
 msgid "Aún no hay series registradas."
 msgstr "Oraindik ez dago serie erregistraturik."
 
@@ -158,11 +195,11 @@ msgstr "Logo"
 
 #: .\appAnime\templates\appAnime\lista_estudios.html:46
 msgid "Ver estudio"
-msgstr "Ikus estudioa"
+msgstr "Ikusi estudioa"
 
 #: .\appAnime\templates\appAnime\lista_estudios.html:51
-msgid "Oraindik ez dago estudio erregistraturik."
-msgstr ""
+msgid "No hay estudios registrados."
+msgstr "Ez dago erregistratutako animazio-estudiorik."
 
 #: .\appAnime\templates\appAnime\lista_generos.html:8
 msgid "Géneros de anime"
@@ -170,7 +207,7 @@ msgstr "Anime-generoak"
 
 #: .\appAnime\templates\appAnime\lista_generos.html:17
 msgid "Ver género"
-msgstr "Generoa ikusi"
+msgstr "Ikusi generoa"
 
 #: .\appAnime\templates\appAnime\lista_generos.html:21
 msgid "No hay géneros registrados."

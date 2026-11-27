@@ -1,28 +1,25 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 from .models import Anime
 from datetime import date
+
 
 class AnimeForm(forms.ModelForm):
     class Meta:
         model = Anime
         fields = [
-            'title',
-            'synopsis',
-            'release_year',
-            'rating',
-            'genre',
-            'studios',
-            'image_url',
+            'title', 'synopsis', 'release_year',
+            'rating', 'genre', 'studios', 'image_url',
         ]
 
         labels = {
-            'title': 'Título',
-            'synopsis': 'Sinopsis',
-            'release_year': 'Año de estreno',
-            'rating': 'Valoración',
-            'genre': 'Género',
-            'studios': 'Estudios',
-            'image_url': 'URL de la imagen',
+            'title': _('Título'),
+            'synopsis': _('Sinopsis'),
+            'release_year': _('Año de estreno'),
+            'rating': _('Valoración'),
+            'genre': _('Género'),
+            'studios': _('Estudios'),
+            'image_url': _('URL de la imagen'),
         }
 
         widgets = {
@@ -37,9 +34,10 @@ class AnimeForm(forms.ModelForm):
 
         if year < 1900 or year > current_year:
             raise forms.ValidationError(
-                f"El año debe estar entre 1900 y {current_year}."
-        )
-
+                _("El año debe estar entre %(min)s y %(max)s."),
+                code='invalid_year',
+                params={'min': 1900, 'max': current_year},
+            )
         return year
 
     def clean_rating(self):
@@ -47,7 +45,7 @@ class AnimeForm(forms.ModelForm):
 
         if rating < 0 or rating > 10:
             raise forms.ValidationError(
-                "La valoración debe estar entre 0 y 10."
+                _("La valoración debe estar entre 0 y 10."),
+                code='invalid_rating',
             )
-
         return rating
