@@ -118,9 +118,11 @@ p {
 /* INICIO - HERO */
 
 .hero {
-    position: relative;
-    overflow: hidden;
-    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
     margin-bottom: 45px;
     border-radius: 24px;
     background: linear-gradient(135deg,#e4d2fa,#f4e7fc);
@@ -334,13 +336,24 @@ div.content > a:hover h2 {
     background-color: #01dc4e;
     border-radius: 22px;
 }
+
 .foto-portada {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 55%;
+    display: block;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    pointer-events: none;
+    position: static;
+    object-fit: contain;
+}
+
+.hero-texto {
+    min-width: 0;
+}
+
+.hero-texto h1,
+.hero-texto p {
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .hero h1,

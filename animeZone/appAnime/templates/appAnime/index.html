@@ -7,16 +7,24 @@
 
 {% block contenido %}
 <section class="hero">
-    <p class="etiqueta">{% trans "TU UNIVERSO ANIME" %}</p>
-    <h1>{% trans "Descubre tu próximo anime favorito" %}</h1>
-    <p>{% trans "Explora series, géneros y los estudios que les dan vida." %}</p>
 
-    <a class="boton" href="{% url 'appAnime:lista_series' %}">
-        {% trans "Explorar series" %}
-    </a>
+    <div class="hero-texto">
+        <p class="etiqueta">{% trans "TU UNIVERSO ANIME" %}</p>
+        <h1>{% trans "Descubre tu próximo anime favorito" %}</h1>
+
+        <p>{% trans "Explora series, géneros y los estudios que les dan vida." %}
+        </p>
+
+        <a class="boton" href="{% url 'appAnime:lista_series' %}">
+            {% trans "Explorar series" %}
+        </a>
+
+    </div>
+
     <img class="foto-portada"
-    src="{% static 'appAnime/img/fotoportada.png' %}"
-     alt="Personajes de anime">
+         src="{% static 'appAnime/img/fotoportada.png' %}"
+         alt="Personajes de anime">
+
 </section>
 
 <h2>{% trans "El mejor anime de cada género" %}</h2>
